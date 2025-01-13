@@ -1,6 +1,6 @@
 "use client"
 
-import axios from "axios"
+import {signupaction} from "@/app/actions/user"
 import { useState } from "react"
 
 export function Signup(){
@@ -17,10 +17,7 @@ export function Signup(){
                 <br />
             <div className="mt-4 flex justify-center">
                 <button onClick={() => {
-                    axios.post("http://localhost:3000/api/user", {
-                        email, 
-                        password
-                    })
+                    signupaction(email, password)
                 }}>Signup</button>
             </div>
         </div>
